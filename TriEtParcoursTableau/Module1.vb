@@ -18,8 +18,6 @@
             Next
         Next
 
-
-
         Console.ReadLine()
     End Sub
 
