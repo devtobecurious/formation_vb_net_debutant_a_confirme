@@ -1,4 +1,6 @@
-﻿Module Module1
+﻿
+
+Module Module1
 
     Sub Main()
         Dim val1 As Integer = 10
@@ -9,6 +11,9 @@
         Catch
             Console.WriteLine("Il existe une erreur")
         End Try
+
+
+
 
         Try
             Dim result As Integer = (val1 / val2)
@@ -27,6 +32,8 @@
         ' Du plus sp�cifique au moins sp�cifique
         Try
             Dim result As Integer = (val1 / val2)
+
+        Catch ex As DivideByZeroException When ex.Message.Contains("test")
         Catch ex As DivideByZeroException
             Console.WriteLine(("Il existe une erreur sp�cifique : " + ex.Message))
         Catch ex As Exception
