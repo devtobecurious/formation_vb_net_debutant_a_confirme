@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B34FE43F-34A9-446E-8636-AA74B3451243}</ProjectGuid>
+    <ProjectGuid>{3F02E208-FC18-46F9-834C-10D622F636CC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>LesRobotsBoss5</RootNamespace>
     <AssemblyName>LesRobotsBoss5</AssemblyName>
@@ -83,7 +83,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="NonValidCoordoonneeException.vb" />
     <Compile Include="R2D.vb" />
     <Compile Include="Robot.vb" />
   </ItemGroup>
