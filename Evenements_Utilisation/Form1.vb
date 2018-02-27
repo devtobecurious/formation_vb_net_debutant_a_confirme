@@ -36,6 +36,10 @@
         Me._timer2.Interval = 5000
         Me._timer2.Start()
 
+        'RemoveHandler Me._timer2.Tick, AddressOf Timer2_Tick si on le met ici, ça empêche les événements
+    End Sub
+
+    Private Sub Form1_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         RemoveHandler Me._timer2.Tick, AddressOf Timer2_Tick
     End Sub
 End Class
