@@ -18,7 +18,6 @@
         Const COEFFICIENT As Integer = 2
         Me.CoordonneeX = (deplacementX * COEFFICIENT)
         Me.CoordonneeY = (deplacementY * COEFFICIENT)
-        Me.VerifierCoordonnees()
     End Sub
 
     Public Overrides Function ToString() As String

@@ -15,7 +15,7 @@
         For Each item In list
             Console.WriteLine(("2. ArrayList " + item))
         Next
-        list.Insert(1, 1.5, M)
+        list.Insert(1, 1.5)
         For Each item In list
             Console.WriteLine(("3. ArrayList " + item))
         Next

@@ -13,7 +13,7 @@
             Console.WriteLine("Bonjour Humain, quel est votre choix ? ")
             Dim value As String = Console.ReadLine
             Console.ForegroundColor = ConsoleColor.Green
-            If Enum.TryParse(value, type) Then
+            If System.Enum.TryParse(value, type) Then
                 actionHistoryList.Add(DateTime.Now, type)
                 Console.WriteLine(("Vous avez choisi " + type.ToString))
             Else

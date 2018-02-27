@@ -62,22 +62,22 @@
         Console.WriteLine(String.Format("Le montant de l'addition vaut {0}", retour))
     End Sub
 
-    Private Shared Sub JeSaisAdditionnerDeuxValeursAvecUnRetourRef(ByVal valeur1 As Integer, ByVal valeur2 As Integer, ByRef retour As Integer)
+    Private Sub JeSaisAdditionnerDeuxValeursAvecUnRetourRef(ByVal valeur1 As Integer, ByVal valeur2 As Integer, ByRef retour As Integer)
         retour = (valeur1 + valeur2)
         Console.WriteLine(String.Format("Le montant de l'addition vaut {0}", retour))
     End Sub
 
-    Private Shared Sub JeSaisAdditionnerDeuxValeursAvecUnRetourOut(ByVal valeur1 As Integer, ByVal valeur2 As Integer, ByRef retour As Integer)
+    Private Sub JeSaisAdditionnerDeuxValeursAvecUnRetourOut(ByVal valeur1 As Integer, ByVal valeur2 As Integer, ByRef retour As Integer)
         retour = (valeur1 + valeur2)
         Console.WriteLine(String.Format("Le montant de l'addition vaut {0}", retour))
     End Sub
 
-    Private Shared Function JeSaisAdditionnerDeuxValeursAvecUnRetour(ByVal valeur1 As Integer, ByVal valeur2 As Integer) As Integer
+    Private Function JeSaisAdditionnerDeuxValeursAvecUnRetour(ByVal valeur1 As Integer, ByVal valeur2 As Integer) As Integer
         Return (valeur1 + valeur2)
     End Function
 
     ' Compl�ter cette m�thode
-    Private Shared Sub JeSaisMultiplier(ByVal valeur1 As Double, ByVal valeur2 As Double, ByVal retour As Double)
+    Private Sub JeSaisMultiplier(ByVal valeur1 As Double, ByVal valeur2 As Double, ByVal retour As Double)
         retour = (valeur1 * valeur2)
     End Sub
 

@@ -3,7 +3,7 @@
     Dim MAX_LIST As Integer = 10
 
 
-    Private Sub Main(ByVal args() As String)
+    Public Sub Main(ByVal args() As String)
         Dim type As ActionType = ActionType.displaymenu
         LancerMoteur(type)
     End Sub
@@ -117,17 +117,17 @@
 
     End Sub
 
-    Private Shared Sub DisplaymMenu()
+    Private Sub DisplaymMenu()
         Console.WriteLine("____________")
         Console.WriteLine("MENU".PadLeft(5).PadRight(5))
         Console.WriteLine("____________")
-        Dim names = Enum.GetNames(GetType(ActionType))
+        Dim names = System.Enum.GetNames(GetType(ActionType))
         For Each key In names
-            Console.WriteLine(String.Format("{0} : {1}", CType(Enum.Parse(GetType(ActionType), key), Integer), key))
+            Console.WriteLine(String.Format("{0} : {1}", CType(System.Enum.Parse(GetType(ActionType), key), Integer), key))
         Next
     End Sub
 
-    Private Shared Sub AskName(ByRef name As String)
+    Private Sub AskName(ByRef name As String)
         Console.WriteLine("Votre nom ?")
         name = Console.ReadLine
         Console.WriteLine(("Votre nom est : " + name))

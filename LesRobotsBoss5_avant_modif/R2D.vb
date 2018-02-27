@@ -21,7 +21,5 @@
         Dim coeff As Integer = 10
         Me.CoordonneeX = (rand.Next(0, 50) * coeff)
         Me.CoordonneeY = (rand.Next(0, 50) * coeff)
-        ' A am�liorer ici, la valeur 50 doit etre une constante globale
-        Me.VerifierCoordonnees()
     End Sub
 End Class
