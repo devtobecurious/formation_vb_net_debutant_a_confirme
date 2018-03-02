@@ -65,6 +65,8 @@
 
     Public Property Nom As String
 
+    Public Property LifePoint As Integer
+
     Public Property CoordonneeX As Integer
         Get
             Return Me._localisation.X

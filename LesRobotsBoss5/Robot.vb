@@ -3,7 +3,7 @@
 Public Class Robot
     Inherits Combattant
 
-#Region "Propri�t�s"
+#Region "Propriétés"
 
     Private _largeur As Integer
 
@@ -40,6 +40,7 @@ Public Class Robot
 
     Public Property Taille As Integer
 
+    Public Property TeamId As Integer
 
     Public Overrides Function ToString() As String
         Return String.Format("Robot : {2} // {0}:{1}", Me.CoordonneeX, Me.CoordonneeY, Me.Nom)
