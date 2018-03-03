@@ -19,7 +19,6 @@ Module Module1
                     Where robot.Nom.EndsWith("1")
                     Select robot
 
-        ' Afficher les robots dans un rayon de moins de 10m
         For Each item In query
             Console.WriteLine("Robot : " & item.Nom)
         Next
