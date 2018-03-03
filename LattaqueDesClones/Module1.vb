@@ -5,7 +5,7 @@ Module Module1
     Dim MAX_Y As Integer = 50
 
 
-    Private Sub Main(ByVal args() As String)
+    Public Sub Main(ByVal args() As String)
         Dim robots As List(Of LesRobots.Robot) = New List(Of LesRobots.Robot)
         Initialize(robots)
         LancerAttaques(robots)

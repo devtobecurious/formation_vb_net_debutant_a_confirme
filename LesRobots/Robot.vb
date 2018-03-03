@@ -8,6 +8,9 @@
 
 #End Region
 
+    Public Sub New()
+    End Sub
+
     Public Sub New(ByVal nom As String)
         Me.New(nom, 0, 0)
 

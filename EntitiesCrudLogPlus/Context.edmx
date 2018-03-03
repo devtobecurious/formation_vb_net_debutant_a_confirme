@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="starwars_dbModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Jedi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="200" />
+          <Property Name="LifePoint" Type="int" />
+          <Property Name="LocalizationId" Type="int" />
+        </EntityType>
+        <EntityType Name="Localization">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="X" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Y" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="Robot">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="200" />
+          <Property Name="LocalizationId" Type="int" />
+          <Property Name="LifePoint" Type="int" />
+        </EntityType>
+        <Association Name="Jedi_Localization">
+          <End Role="Localization" Type="Self.Localization" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Jedi" Type="Self.Jedi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Localization">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Jedi">
+              <PropertyRef Name="LocalizationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Robot_Localization">
+          <End Role="Localization" Type="Self.Localization" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Robot" Type="Self.Robot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Localization">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Robot">
+              <PropertyRef Name="LocalizationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="starwars_dbModelStoreContainer">
+          <EntitySet Name="Jedi" EntityType="Self.Jedi" Schema="starwars_db" store:Type="Tables" />
+          <EntitySet Name="Localization" EntityType="Self.Localization" Schema="starwars_db" store:Type="Tables" />
+          <EntitySet Name="Robot" EntityType="Self.Robot" Schema="starwars_db" store:Type="Tables" />
+          <AssociationSet Name="Jedi_Localization" Association="Self.Jedi_Localization">
+            <End Role="Localization" EntitySet="Localization" />
+            <End Role="Jedi" EntitySet="Jedi" />
+          </AssociationSet>
+          <AssociationSet Name="Robot_Localization" Association="Self.Robot_Localization">
+            <End Role="Localization" EntitySet="Localization" />
+            <End Role="Robot" EntitySet="Robot" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="starwars_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Robot">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="LocalizationId" Type="Int32" />
+          <Property Name="LifePoint" Type="Int32" />
+          <NavigationProperty Name="Localization" Relationship="starwars_dbModel.Robot_Localization" FromRole="Robot" ToRole="Localization" />
+        </EntityType>
+        <EntityContainer Name="starwars_dbEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Robot" EntityType="Self.Robot" />
+          <EntitySet Name="Jedi" EntityType="starwars_dbModel.Jedi" />
+          <EntitySet Name="Localization" EntityType="starwars_dbModel.Localization" />
+          <AssociationSet Name="Jedi_Localization" Association="starwars_dbModel.Jedi_Localization">
+            <End Role="Localization" EntitySet="Localization" />
+            <End Role="Jedi" EntitySet="Jedi" />
+          </AssociationSet>
+          <AssociationSet Name="Robot_Localization" Association="starwars_dbModel.Robot_Localization">
+            <End Role="Localization" EntitySet="Localization" />
+            <End Role="Robot" EntitySet="Robot" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Jedi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="LifePoint" Type="Int32" />
+          <Property Name="LocalizationId" Type="Int32" />
+          <NavigationProperty Name="Localization" Relationship="starwars_dbModel.Jedi_Localization" FromRole="Jedi" ToRole="Localization" />
+        </EntityType>
+        <EntityType Name="Localization">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="X" Type="Decimal" />
+          <Property Name="Y" Type="Decimal" />
+          <NavigationProperty Name="Jedi" Relationship="starwars_dbModel.Jedi_Localization" FromRole="Localization" ToRole="Jedi" />
+          <NavigationProperty Name="Robot" Relationship="starwars_dbModel.Robot_Localization" FromRole="Localization" ToRole="Robot" />
+        </EntityType>
+        <Association Name="Jedi_Localization">
+          <End Type="starwars_dbModel.Localization" Role="Localization" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="starwars_dbModel.Jedi" Role="Jedi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Localization">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Jedi">
+              <PropertyRef Name="LocalizationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Robot_Localization">
+          <End Type="starwars_dbModel.Localization" Role="Localization" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="starwars_dbModel.Robot" Role="Robot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Localization">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Robot">
+              <PropertyRef Name="LocalizationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="starwars_dbModelStoreContainer" CdmEntityContainer="starwars_dbEntities1">
+          <EntitySetMapping Name="Robot">
+            <EntityTypeMapping TypeName="starwars_dbModel.Robot">
+              <MappingFragment StoreEntitySet="Robot">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LocalizationId" ColumnName="LocalizationId" />
+                <ScalarProperty Name="LifePoint" ColumnName="LifePoint" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Jedi">
+            <EntityTypeMapping TypeName="starwars_dbModel.Jedi">
+              <MappingFragment StoreEntitySet="Jedi">
+                <ScalarProperty Name="LocalizationId" ColumnName="LocalizationId" />
+                <ScalarProperty Name="LifePoint" ColumnName="LifePoint" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Localization">
+            <EntityTypeMapping TypeName="starwars_dbModel.Localization">
+              <MappingFragment StoreEntitySet="Localization">
+                <ScalarProperty Name="Y" ColumnName="Y" />
+                <ScalarProperty Name="X" ColumnName="X" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

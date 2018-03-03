@@ -1,6 +1,6 @@
 ﻿Module Module1
 
-    Private Sub Main(ByVal args() As String)
+    Public Sub Main(ByVal args() As String)
         Console.WriteLine("Je suis R2D2, je sais courir")
         Courir()
         Courir(20)

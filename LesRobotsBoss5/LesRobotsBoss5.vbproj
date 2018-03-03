@@ -64,7 +64,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="C3P.vb" />
+    <Compile Include="Combattant.vb" />
     <Compile Include="Droide.vb" />
+    <Compile Include="Jedi.vb" />
+    <Compile Include="Localisation.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

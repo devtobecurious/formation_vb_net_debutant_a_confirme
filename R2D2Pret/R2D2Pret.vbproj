@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{1D541094-493E-4835-B634-22A5A92D3B5F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>R2D2Pret.Module1</StartupObject>
+    <StartupObject>R2D2Pret.R2D2Pret.Module1</StartupObject>
     <RootNamespace>R2D2Pret</RootNamespace>
     <AssemblyName>R2D2Pret</AssemblyName>
     <FileAlignment>512</FileAlignment>

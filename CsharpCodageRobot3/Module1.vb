@@ -3,7 +3,7 @@
     Dim MAX_LIST As Integer = 10
 
 
-    Private Sub Main(ByVal args() As String)
+    Public Sub Main(ByVal args() As String)
         Dim type As ActionType = ActionType.displaymenu
         LancerMoteur(type)
     End Sub
@@ -30,7 +30,7 @@
 
             Select Case (type)
                 Case ActionType.displaymenu
-                    DisplaymMenu()
+                    DisplaymMenu
                 Case ActionType.askName
                     AskName(name)
                 Case ActionType.askBirthday
@@ -123,13 +123,9 @@
         Console.WriteLine("____________")
         Dim names = System.Enum.GetNames(GetType(ActionType))
         For Each key In names
-            Console.WriteLine(String.Format("{0} : {1}", CType(Enum.Parse(GetType(ActionType), key), Integer), key))
+            Console.WriteLine(String.Format("{0} : {1}", CType(System.Enum.Parse(GetType(ActionType), key), Integer), key))
         Next
     End Sub
-
-#Region "Test"
-
-#End Region
 
     Private Sub AskName(ByRef name As String)
         Console.WriteLine("Votre nom ?")
