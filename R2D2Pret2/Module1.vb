@@ -6,8 +6,16 @@
     Sub Main()
         ' test
 
-        For index = 1 To 10
+        For i = 0 To 10
 
+        Next
+
+
+
+        For index = 1 To 1000
+            If index = 1000 Then
+                Throw New Exception()
+            End If
         Next
 
         Dim array(5) As Integer

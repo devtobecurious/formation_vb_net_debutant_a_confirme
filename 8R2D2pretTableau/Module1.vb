@@ -4,6 +4,7 @@
         Dim unTableauUneDimension() As Integer = New Integer((5) - 1) {}
         Dim unSecondTableauUneDimension() As Integer = {1, 2, 3}
 
+
         Dim unTroisiemeTableauUneDimension() As String = New String() {"chaine 1", "chaine 2", "chaine 3"}
         ' Comment parcourir un tableau ?
         ' It�ration compl�te
@@ -14,6 +15,7 @@
             ' Les valeurs de types primitifs sont pr�initialis�es � 0
             i = (i + 1)
         Loop
+
 
         i = 0
         Do While (i < unSecondTableauUneDimension.Length)
@@ -58,12 +60,13 @@
 
         Dim numbers = {{1, 2}, {3, 4}, {5, 6}}
 
+
         ' a montrer après le tp
         For index0 = 0 To numbers.GetUpperBound(0)
             For index1 = 0 To numbers.GetUpperBound(1)
-                Debug.Write(numbers(index0, index1).ToString & " ")
+                Console.Write(numbers(index0, index1).ToString & " ")
             Next
-            Debug.WriteLine("")
+            Console.WriteLine("")
         Next
     End Sub
 

@@ -1,4 +1,5 @@
 ﻿Module Module1
+    Private Const MONAGE As Integer = 6
 
     Sub Main()
         ListeTypesPrimitifs()
@@ -25,5 +26,40 @@
 
         Dim [date] As DateTime = DateTime.Now
         Console.WriteLine(("date : " + [date]))
+
+        Dim monEtat As Etat
+
+        monEtat = Etat.Endormi
+
+        Dim str As String
+
+        Select Case str.ToLower()
+            Case "Endormie !".ToLower()
+
+            Case "eveille"
+
+            Case Else
+
+        End Select
+
+
+        Dim a As Etat
+
+        Select Case a
+            Case Etat.Endormi
+
+            Case Etat.Eveille
+
+            Case Else
+
+        End Select
     End Sub
+
+
+    Public Enum Etat
+        Eveille = 1
+        Fatigue
+        Endormi
+    End Enum
+
 End Module

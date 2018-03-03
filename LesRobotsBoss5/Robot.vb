@@ -12,6 +12,7 @@
     Public Sub New(ByVal nom As String)
         Me.New(nom, 0, 0)
 
+
     End Sub
 
     Public Sub New(ByVal nom As String, ByVal taille As Integer)
@@ -25,7 +26,7 @@
     End Sub
 
     Public Sub New(ByVal nom As String, ByVal taille As Integer, ByVal largeur As Integer, ByVal coordX As Integer, ByVal coordY As Integer)
-        MyBase.New
+        MyBase.New()
         Me.Taille = taille
         Me._largeur = largeur
         Me.CoordonneeX = coordX

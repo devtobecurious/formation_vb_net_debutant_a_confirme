@@ -13,7 +13,7 @@
             Console.WriteLine("Bonjour Humain, quel est votre choix ? ")
             Dim value As String = Console.ReadLine
             Console.ForegroundColor = ConsoleColor.Green
-            If Enum.TryParse(value, type) Then
+            If System.Enum.TryParse(value, type) Then
                 actionHistoryList.Add(DateTime.Now, type)
                 Console.WriteLine(("Vous avez choisi " + type.ToString))
             Else
@@ -60,7 +60,7 @@
                     While (i < MAX_LIST)
                         Console.ForegroundColor = ConsoleColor.Yellow
                         Console.WriteLine(("Chiffre " _
-                                        + (i + " a ajouter dans la liste ?")))
+                                        & (i & " a ajouter dans la liste ?")))
                         Dim valInput As String = Console.ReadLine
                         Dim number As Integer
                         If Integer.TryParse(valInput, number) Then
@@ -75,14 +75,14 @@
                     End While
 
                     Console.ForegroundColor = ConsoleColor.Yellow
-                    Console.WriteLine(("La somme est de : " + list.Sum))
+                    Console.WriteLine(("La somme est de : " & list.Sum))
                 Case ActionType.computeAverage10Number
                     Console.ForegroundColor = ConsoleColor.Yellow
                     If (list.Count = 0) Then
                         Console.ForegroundColor = ConsoleColor.Red
-                        Console.WriteLine("Veuillez d'abord ajouter les nombres dans la liste, s'il vous pla�t.")
+                        Console.WriteLine("Veuillez d'abord ajouter les nombres dans la liste, s'il vous plaît.")
                     Else
-                        Console.WriteLine(("La moyenne est de : " + list.Average))
+                        Console.WriteLine(("La moyenne est de : " & list.Average))
                     End If
 
                 Case ActionType.historic
