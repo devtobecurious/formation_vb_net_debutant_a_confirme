@@ -5,6 +5,8 @@
             Dim query = From robot In context.Robot
                         Select robot
 
+            context.Database.Log = AddressOf ConsoleLog
+
             For Each rob As Robot In query
                 Console.WriteLine(rob)
             Next
@@ -28,6 +30,14 @@
         End Using
 
         Console.ReadLine()
+    End Sub
+
+    Private Sub ConsoleLog(query As String)
+        Console.ForegroundColor = ConsoleColor.DarkGreen
+
+        Console.WriteLine(query)
+
+        Console.ForegroundColor = ConsoleColor.White
     End Sub
 
 End Module
