@@ -1,4 +1,5 @@
 ﻿Imports System.Text
+Imports LesRobotsBoss5
 
 Module Module1
 
@@ -50,29 +51,37 @@ Module Module1
         Dim list As New List(Of LesRobotsBoss5.Robot)
 
         Using stream As New IO.StreamReader(path)
-            Dim content As String
+            'Dim content As String
 
-            content = stream.ReadToEnd()
+            'content = stream.ReadToEnd()
 
-            Dim rows As String() = content.Split(vbCrLf)
+            'Dim rows As String() = content.Split(vbCrLf)
 
-            For Each row In rows
-                Dim colums As String() = row.Split(",")
+            'For Each row In rows
+            '    Dim colums As String() = row.Split(",")
 
-                If colums.Length >= 3 Then
-                    Dim robot = New LesRobotsBoss5.Robot() With
-                         {
-                            .Nom = colums(0),
-                            .CoordonneeX = colums(1),
-                            .CoordonneeY = colums(2)
-                         }
+            '    If colums.Length >= 3 Then
+            '        Dim robot = New LesRobotsBoss5.Robot() With
+            '             {
+            '                .Nom = colums(0),
+            '                .CoordonneeX = colums(1),
+            '                .CoordonneeY = colums(2)
+            '             }
 
-                    list.Add(robot)
+            '        list.Add(robot)
 
-                    maProc(robot)
-                End If
-            Next
+            '        maProc(robot)
+            '    End If
+            'Next
+
+            Dim monSeria As New System.Xml.Serialization.XmlSerializer(GetType(List(Of Robot)))
+            list = monSeria.Deserialize(stream)
+
         End Using
+
+        'For Each rob In list
+        '    maProc(rob)
+        'Next
 
         Return list
     End Function
