@@ -1,5 +1,7 @@
-﻿Public Class Calculateur
-    Delegate Sub AfficherResultat(ByVal result As Integer)
+﻿Delegate Sub AfficherResultat(ByVal result As Integer)
+
+Public Class Calculateur
+
 
     Public Sub Execute(ByVal val As Integer, ByVal val2 As Integer, ByVal display As AfficherResultat)
         val = val * 10
