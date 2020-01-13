@@ -1,4 +1,6 @@
-﻿Module Module1
+﻿'Option Strict On
+
+Module Module1
     Private Const MONAGE As Integer = 6
 
     Sub Main()
@@ -7,7 +9,7 @@
 
     Public Sub ListeTypesPrimitifs()
         Dim jeSuisUnBoolean As Boolean = True
-        Console.WriteLine(("boolean : " + jeSuisUnBoolean))
+        Console.WriteLine(("boolean : " + jeSuisUnBoolean.ToString()))
 
         Dim jeSuisUnByte As Byte = 0
         Console.WriteLine(("boolean : " + jeSuisUnByte))
@@ -15,7 +17,8 @@
         Dim jeSuisUnEntier As Integer = 0
         Console.WriteLine(("entier : " + jeSuisUnEntier))
 
-        Dim jeSuisUnCaractere As Char = Microsoft.VisualBasic.ChrW(114)
+        Dim jeSuisUnCaractere As Char = "test"
+        ' Microsoft.VisualBasic.ChrW(114)
         Console.WriteLine(("caractere : " + jeSuisUnCaractere))
 
         Dim jeSuisUnDouble As Double = 1

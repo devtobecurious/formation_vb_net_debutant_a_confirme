@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26403.7
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 Découverte", "01 Découverte", "{CDC0A718-1EF8-4E41-93EE-8F65960DB101}"
 EndProject
@@ -277,6 +277,16 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "UtilisationXML", "Utilisati
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exemple 047", "Exemple 047", "{CCB810C3-18BE-4B61-AA71-15C5E3D15CA1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "13 Graphics", "13 Graphics", "{8B09DEFD-7996-4548-B32F-F9D63B89C5FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12 Windows form", "12 Windows form", "{6955241F-39A3-46B8-96DE-201DF1537F3E}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WindowsApp1", "WindowsApp1\WindowsApp1.vbproj", "{B4B56919-3D45-4EA3-80D8-F5E601188236}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TestDessin", "TestDessin\TestDessin.vbproj", "{9DCDA898-E509-4E7D-9E49-78B13DF6D0A4}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DecouverteDessinDragAndDrop", "DecouverteDessinDragAndDrop\DecouverteDessinDragAndDrop.vbproj", "{656E3343-D54F-4FA7-B591-D7B84F7626E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -547,6 +557,18 @@ Global
 		{65B5EFF1-015A-48AE-A920-76705715A323}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65B5EFF1-015A-48AE-A920-76705715A323}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65B5EFF1-015A-48AE-A920-76705715A323}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4B56919-3D45-4EA3-80D8-F5E601188236}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4B56919-3D45-4EA3-80D8-F5E601188236}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4B56919-3D45-4EA3-80D8-F5E601188236}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4B56919-3D45-4EA3-80D8-F5E601188236}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DCDA898-E509-4E7D-9E49-78B13DF6D0A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DCDA898-E509-4E7D-9E49-78B13DF6D0A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DCDA898-E509-4E7D-9E49-78B13DF6D0A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DCDA898-E509-4E7D-9E49-78B13DF6D0A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{656E3343-D54F-4FA7-B591-D7B84F7626E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{656E3343-D54F-4FA7-B591-D7B84F7626E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{656E3343-D54F-4FA7-B591-D7B84F7626E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{656E3343-D54F-4FA7-B591-D7B84F7626E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -676,5 +698,11 @@ Global
 		{403F417A-930C-48BC-B80C-9F629AD6C748} = {2E5C666F-EC07-4F3D-85AA-AC35DD159DC1}
 		{65B5EFF1-015A-48AE-A920-76705715A323} = {CCB810C3-18BE-4B61-AA71-15C5E3D15CA1}
 		{CCB810C3-18BE-4B61-AA71-15C5E3D15CA1} = {21397824-B368-4970-9DF1-D98758F2B3BC}
+		{B4B56919-3D45-4EA3-80D8-F5E601188236} = {6955241F-39A3-46B8-96DE-201DF1537F3E}
+		{9DCDA898-E509-4E7D-9E49-78B13DF6D0A4} = {8B09DEFD-7996-4548-B32F-F9D63B89C5FE}
+		{656E3343-D54F-4FA7-B591-D7B84F7626E3} = {8B09DEFD-7996-4548-B32F-F9D63B89C5FE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {72507F4E-6727-4F7F-9028-91C805EEDB7F}
 	EndGlobalSection
 EndGlobal
