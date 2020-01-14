@@ -20,9 +20,13 @@
 
         Dim myPen As Pen
 
-        'myPen = New Pen(Color.Blue, Width = 2)
+        myPen = New Pen(Color.Blue, Width = 2)
 
-        'e.Graphics.DrawLine(myPen, 100, 150, 150, 100)
+        e.Graphics.DrawLine(myPen, 100, 150, 150, 100)
+
+
+        Dim solidBrush = New SolidBrush(Color.FromArgb(255, 255, 0, 0))
+        e.Graphics.FillEllipse(SolidBrush, 0, 0, 100, 60)
 
     End Sub
 End Class
