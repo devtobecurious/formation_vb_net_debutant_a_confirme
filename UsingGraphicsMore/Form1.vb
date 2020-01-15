@@ -6,9 +6,24 @@ Public Class Form1
     Dim etat As GraphicsState
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim graphics = Me.CreateGraphics()
+        Dim monGraphic = Me.CreateGraphics()
 
-        graphics.DrawLine(Pens.Navy, 100, 100, 200, 200)
+        monGraphic.DrawLine(Pens.Navy, 100, 100, 200, 200)
+
+        monGraphic.DrawLine(Pens.Red, 10, 20, 100, 200)
+
+        monGraphic = Me.Panel1.CreateGraphics()
+
+        'Dim monBrush As Brush = New SolidBrush(Color.FromArgb(10, 50, 100))
+        Dim monBrush As Brush = New HatchBrush(
+                               HatchStyle.Horizontal,
+                               Color.Red,
+                               Color.FromArgb(255, 128, 255, 255))
+        Dim monPinceau As New Pen(monBrush, 30)
+        monGraphic.DrawLine(monPinceau, 10, 20, 100, 200)
+
+
+        monGraphic.DrawString("coucou", New System.Drawing.Font("Arial", 25), Brushes.Green, 50, 100)
     End Sub
 
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
@@ -20,6 +35,8 @@ Public Class Form1
 
         Dim solidBrush = New SolidBrush(Color.FromArgb(255, 255, 0, 0))
         e.Graphics.FillEllipse(solidBrush, 0, 0, 100, 60)
+
+
 
     End Sub
 
